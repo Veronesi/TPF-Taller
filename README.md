@@ -76,7 +76,8 @@ La respuesta vacía indica que no hay elementos para la consulta, es decir que h
 | 12345679 | 1234 |
 | 12345680 | 1234 |
 
-
+Un ejemplo de acceso a este servicio a través de un cliente desarrollado en C# se puede acceder en el siguiente repositorio de GitHub 
+> https://github.com/utn-frcu-isi-tdp/tas-db-testclient/blob/master/TAS.Test.Core/Program.cs
 
 
 
