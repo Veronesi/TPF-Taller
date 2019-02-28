@@ -60,24 +60,21 @@ El servicio 1 es el encargado de la obtención de información del cliente, para
 
 - DNI: es el número de DNI del cliente a identificar. 
 - PASS: es la contraseña del cliente a identificar.
+
 Ejemplo:
 > https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/clients?id=12345678&pass=1234
 
 Respuesta:
-\[
-  {
-    "id": 12345678,
-    "pass": 1234,
-    "response":{
-      "client":{
-        "name":
-        "Juan Amador",
-        "segment": "VIP" 
-      }
-    }
-  }
-\]
+> \[ { "id": 12345678, "pass": 1234, "response": { "client": { "name": "Juan Amador", "segment": "VIP" } } } \]
 
+La respuesta vacía indica que no hay elementos para la consulta, es decir que hubo un falloen la ejecución del mismo 
+
+| DNI | PASS |
+| --- | --- |
+| 12345678 | 1234 |
+| 12345678 | 1234 |
+| 12345679 | 1234 |
+| 12345680 | 1234 |
 
 
 
