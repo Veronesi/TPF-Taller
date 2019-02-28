@@ -6,7 +6,7 @@ El trabajo práctico final consta de la realización de una aplicación para una
 Una terminal de autoservicio o kiosco es un equipo informático situado en lugar público que permite a los usuarios realizar múltiples acciones. También se utiliza como herramienta de información y marketing para las empresas. En la actualidad, los kioscos interactivos a menudo tienen pantallas táctiles. Tienen como objetivo presentar una interfaz amistosa y de fácil interacción que facilite su utilización por cualquier tipo de usuario. Se utilizan en muchas aplicaciones y mercados verticales, tales como bancos, ventas de entradas de espectáculos, correos, hospitales, aeropuertos, estaciones ferroviarias, grandes supermercados. etcétera.
 La aplicación deberá ser capaz de identificar al cliente, presentándole diferentes opciones de operaciones a realizar una vez identificado. La aplicación interactuará con una API de servicios del core bancario de la institución, con el fin de delegar las ejecuciones de las operaciones seleccionadas. Básicamente la aplicación es una orquestador de acceso a servicios.
 
-## Requerimientos No Funcionales
+## Requerimientos Funcionales
 
 ### Identificación del cliente
 La primera pantalla en presentarse al usuario es la de identificación de cliente. En la misma el usuario debe introducir su número de DNI y la contraseña numérica de home banking de cuatro dígitos para proseguir con el flujo. Una vez capturados esos datos se deberá validar el usuario mediante el Servicio S1. De haber algún problema con la validación se debe presentar una pantalla de error al usuario con información relevante. De ser exitosa la validación, el sistema pasa a la siguiente etapa de presentación de operaciones. 
