@@ -32,5 +32,20 @@ La aplicación deberá guiar al usuario para realizar las operaciones que requie
 El sistema deberá registrar en una Base de Datos todas las acciones que realiza un cliente con la terminal de autoservicio para su posterior análisis. La información que se debe persistir no debe contener datos sensibles, como por ejemplo clave de home banking, saldos, entre otros. Se deberá registrar también el tiempo insumido en la ejecución de las operaciones de la API. La explotación de la información persistida queda fuera del alcance de este requerimiento.
 El registro de los datos no debe interferir con la operatoria normal de la aplicación. De mediar algún problema con el acceso al servidor de Base de Datos en el momento del registro, se prefiere obviar dicha persistencia antes que falle el servicio.
 
+### Servicios
 
+Para la construcción de la aplicación se utilizarán una API de servicios, que estará expuesta
+a Internet con el objetivo de lograr la prueba de la mencionada aplicación. Se espera que la
+implementación de los servicios cambie, no en su comportamiento ni funcionamiento, sino
+en la tecnología subyacente, por lo que la aplicación deberá estar preparada ante este
+cambio.
 
+## Requerimientos no funcionales 
+- La aplicación deberá ser robusta ante cualquier tipo de errores.
+- La aplicación deberá ser fácil de usar e intuitiva.
+- La interfaz del usuario deberá ser consistente y no tendrá que tener errores de interacción ni de visualización de información.
+- La aplicación deberá ser desarrollado sobre la plataforma .NET y en lenguaje C#.
+- El programa deberá tener una interfaz gráfica, se sugiere el uso de WinForms integrando los conocimientos y técnicas adquiridos durante la cátedra. La incorporación de conocimientos no adquiridos durante la cátedra serán también bienvenidos.
+- El programa deberá persistir las configuraciones y otros datos en una Base de Datos relacional, utilizando un gestor a elección. Se espera que en un futuro puedan configurarse persistencia en distintos gestores de Bases de Datos u otras formas de persistencia (como por ejemplo archivos, Bases de Datos No-SQL, entre otras), por lo que el software debe estar preparado para ello.
+- La aplicación deberá contener una bitácora de monitoreo (archivo de log), que permita hacer diagnósticos ante la ocurrencia de errores.
+- El código fuente deberá estar correctamente comentado y documentado con los formatos correspondientes. 
