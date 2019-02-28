@@ -13,15 +13,15 @@ La primera pantalla en presentarse al usuario es la de identificación de client
 
 ### Operaciones
 En esta pantalla se le presentarán al usuario las operaciones que podrá acceder el usuario ya validado por la terminal de autoservicio. Las mismas serán los siguientes: 
-> Blanqueo de PIN 
+- Blanqueo de PIN 
 
 El objetivo de la operación es permitir seleccionar y blanquear el PIN de una de las tarjetas pertenecientes al usuario, tanto de las que es titular como de las que son extensiones. En primera medida el sistema deberá acceder al Servicio S2 para obtener los productos que el cliente posee en la entidad bancaria. La aplicación deberá presentar como opciones a seleccionar los números de tarjeta y al ser seleccionado uno, el sistema deberá acceder al Servicio S3, el cual procederá a blanquear el PIN de la tarjeta elegida.
-> Saldo de cuenta corriente 
+- Saldo de cuenta corriente 
 
 El objetivo de este servicio es mostrar al usuario el saldo que posee de la cuenta corriente del cliente en la institución.
 El sistema deberá acceder al Servicio S4 el cual devolverá la información de saldos del
 cliente. Se deberá presentar dicha información al usuario para su conocimiento. 
-> Últimos movimientos 
+- Últimos movimientos 
 
 Este servicio visualizará al usuario los últimos movimientos de su cuenta bancaria. Para ello el sistema deberá interactuar con el Servicio S5 que devuelve los últimos movimientos de una cuenta de un cliente de la institución.
 
