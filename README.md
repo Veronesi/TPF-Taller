@@ -79,8 +79,19 @@ La respuesta vacía indica que no hay elementos para la consulta, es decir que h
 Un ejemplo de acceso a este servicio a través de un cliente desarrollado en C# se puede acceder en el siguiente repositorio de GitHub 
 > https://github.com/utn-frcu-isi-tdp/tas-db-testclient/blob/master/TAS.Test.Core/Program.cs
 
+### Servicio 2 – Obtención de productos del cliente 
+El servicio 2 es el encargado de la obtención de los productos del cliente, es decir las tarjetas que dispone. Para acceder a los datos del cliente el request que se debe formar es el siguiente:
 
+> https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/products?id=DNI
 
+Donde:
+- DNI: es el número de DNI del cliente a que se desea obtener los productos.
+
+Ejemplo:
+> https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/products?id=12345679
+
+Respuesta:
+> \[ { "id": 12345679, "response": { "product": [ { "number": "1234-0987-4567-9999", "name": "Tarjeta Mastercard Banco del Sur", "type": "titular" }, { "number": "1234-0987-8888-5674", "name": "Tarjeta Visa Banco del Sur", "type": "extensión" } ] } } ]
 
 
 
