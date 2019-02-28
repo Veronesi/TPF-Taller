@@ -93,7 +93,57 @@ Ejemplo:
 Respuesta:
 > \[ { "id": 12345679, "response": { "product": \[ { "number": "1234-0987-4567-9999", "name": "Tarjeta Mastercard Banco del Sur", "type": "titular" }, { "number": "1234-0987-8888-5674", "name": "Tarjeta Visa Banco del Sur", "type": "extensión" } ] } } ]
 
+La respuesta vacía indica que no hay elementos para la consulta, es decir que hubo un fallo en la ejecución del mismo 
 
+### Servicio 3 – Blanqueo de PIN 
+El servicio 3 es utilizado para blanquear o resetear el PIN de ka tarjeta de débito del cliente.
+> https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/product-reset?number=NUMBER
 
+Donde:
+- NUMBER: es el número de tarjeta a ser blanqueado el PIN.
 
+Ejemplo: 
+> https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/product-reset?number=1234-0987-4567-7777
 
+Respuesta:
+> \[ { "number": "1234-0987-4567-7777", "response": { "error": 0, "error-description": "" } } ]
+
+Al ejecutar una operación de modificación, la respuesta de la misma tendrá una estructura
+de código y descripción de error. El código de error 0 (cero) significa que no hubo uno,
+cualquier otro número significa un error. La respuesta vacía indica que hubo un error
+irrecuperable. 
+
+### Servicio 4 – Saldo de cuenta corriente 
+
+El servicio 4 informa el estado de la cuenta corriente del cliente. La sintaxis de la consulta es la siguiente: 
+
+> https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/account-balance?id=DNI
+
+Donde:
+- DNI: es el número de DNI del cliente a que se desea obtener el saldo de la cuenta.
+
+Ejemplo: 
+> https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/account-balance?id=12345680
+
+Respuesta:
+> \[{ "id": 12345680, "response": { "balance": 23900 } } ]
+
+La respuesta vacía indica que no hay elementos para la consulta, es decir que hubo un fallo
+en la ejecución del mismo
+
+### Servicio 5 – Últimos movimientos
+El servicio 5 devuelve la información de los últimos movimientos de la cuenta corriente del
+cliente. La sintaxis de la consulta es la siguiente: 
+
+> https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/account-movements?id=DNI
+
+Donde:
+- DNI: es el número de DNI del cliente del que se desean obtener los últimos movimientos de la cuenta.
+
+Ejemplo: 
+> https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/account-movements?id=12345680
+
+Respuesta:
+> \[ { "id": 12345680, "response": { "movements": \[ { "date": "2018-12-01", "ammount": -500 }, { "date": "2018-12-01", "ammount": -750 } ] } } ]
+
+La respuesta vacía indica que no hay elementos para la consulta, es decir que falló la misma. 
