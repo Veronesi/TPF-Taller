@@ -91,7 +91,7 @@ Ejemplo:
 > https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/products?id=12345679
 
 Respuesta:
-> \[ { "id": 12345679, "response": { "product": [ { "number": "1234-0987-4567-9999", "name": "Tarjeta Mastercard Banco del Sur", "type": "titular" }, { "number": "1234-0987-8888-5674", "name": "Tarjeta Visa Banco del Sur", "type": "extensión" } ] } } ]
+> \[ { "id": 12345679, "response": { "product": \[ { "number": "1234-0987-4567-9999", "name": "Tarjeta Mastercard Banco del Sur", "type": "titular" }, { "number": "1234-0987-8888-5674", "name": "Tarjeta Visa Banco del Sur", "type": "extensión" } ] } } ]
 
 
 
