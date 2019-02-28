@@ -49,3 +49,42 @@ cambio.
 - El programa deberá persistir las configuraciones y otros datos en una Base de Datos relacional, utilizando un gestor a elección. Se espera que en un futuro puedan configurarse persistencia en distintos gestores de Bases de Datos u otras formas de persistencia (como por ejemplo archivos, Bases de Datos No-SQL, entre otras), por lo que el software debe estar preparado para ello.
 - La aplicación deberá contener una bitácora de monitoreo (archivo de log), que permita hacer diagnósticos ante la ocurrencia de errores.
 - El código fuente deberá estar correctamente comentado y documentado con los formatos correspondientes. 
+
+## Definicion Servicios
+En esta sección se describen los servicios a emplear por parte de la aplicación. Debido a que no se disponen los servicios reales del core bancario, se plantea el uso de servicios simulados o de tipo Fake. Estos servicios adolecen de seguridad, encriptación, entre otros, y su objetivo es lograr una primera integración operativa con la aplicación. Los servicios expuestos son de tipo RESTful, que básicamente son request GET HTTP que devuelven datos en formato JSON.
+
+### Servicio 1 – Identificación del cliente
+
+El servicio 1 es el encargado de la obtención de información del cliente, para acceder a los datos del cliente el request que se debe formar es el siguiente:
+> https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/clients?id=DNI&pass=PASS
+
+- DNI: es el número de DNI del cliente a identificar. 
+- PASS: es la contraseña del cliente a identificar.
+Ejemplo:
+> https://my-json-server.typicode.com/utn-frcu-isi-tdp/tas-db/clients?id=12345678&pass=1234
+
+Respuesta:
+\[
+  {
+    "id": 12345678,
+    "pass": 1234,
+    "response":{
+      "client":{
+        "name":
+        "Juan Amador",
+        "segment": "VIP" 
+      }
+    }
+  }
+\]
+
+
+
+
+
+
+
+
+
+
+
