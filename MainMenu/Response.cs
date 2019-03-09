@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MainMenu
 {
-    class Client
+    class Response
     {
         //  "id": 12345678, "pass": 1234, "response": { "client": { "name": "Juan Amador", "segment": "VIP" } } } ]
-        public String name { get; set; }
-        public String segment { get; set; }
+        public Client client { get; set; }
     }
 }

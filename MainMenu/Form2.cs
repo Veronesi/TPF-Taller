@@ -84,7 +84,9 @@ namespace MainMenu
                 Clients getJson = json.Clients(this.iDni, this.textBoxPdw.Text);
                 if (getJson != null)
                 {
-
+                    Form3 frm3 = new Form3(getJson.response.client.name, getJson.id);
+                    frm3.Show();
+                    this.Hide();
                 }
                 else
                 {

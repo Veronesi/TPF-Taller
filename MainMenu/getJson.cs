@@ -19,8 +19,44 @@ namespace MainMenu
             /* Convertimos el String en Json(Clients) */
             if (strresulttest != "[]") { 
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-                Clients objList = (Clients)serializer.Deserialize(strresulttest, typeof(Clients));
-                return objList;
+                List<Clients> objList = (List<Clients>)serializer.Deserialize(strresulttest, typeof(List<Clients>));
+                return objList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public Products Products(String pDni)
+        {
+            /* Hacemos el GET a la API */
+            String strresulttest = this.PostJson($"products?id={pDni}");
+
+            /* Convertimos el String en Json(Products) */
+            if (strresulttest != "[]")
+            {
+                var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+                List<Products> objList = (List<Products>)serializer.Deserialize(strresulttest, typeof(List<Products>));
+                return objList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public ProductReset ProductReset(String pNumber)
+        {
+            /* Hacemos el GET a la API */
+            String strresulttest = this.PostJson($"product-reset?number={pNumber}");
+
+            /* Convertimos el String en Json(Products) */
+            if (strresulttest != "[]")
+            {
+                /* cambiamos el campo "error-description" a "errorDescription" */
+                strresulttest = strresulttest.Replace("error-description", "errorDescription");
+                var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+                List<ProductReset> objList = (List<ProductReset>)serializer.Deserialize(strresulttest, typeof(List<ProductReset>));
+                return objList[0];
             }
             else
             {

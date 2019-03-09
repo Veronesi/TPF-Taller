@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MainMenu
 {
-    class Clients
+    class ErrorProductReset
     {
-        public String id { get; set; }
-        public String pass { get; set; }
-        public Response response { get; set; }
+        public String error { get; set; }
+        public String errorDescription { get; set; }
     }
 }
