@@ -1,0 +1,11 @@
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.csprojAssemblyReference.cache
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.Form1.resources
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.Properties.Resources.resources
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.csproj.GenerateResource.cache
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.csproj.CoreCompileInputs.cache
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\bin\Debug\MainMenu.exe.config
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\bin\Debug\MainMenu.exe
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\bin\Debug\MainMenu.pdb
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.exe
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.pdb
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.Form2.resources
