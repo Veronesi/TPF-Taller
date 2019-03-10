@@ -10,3 +10,4 @@ C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.exe
 C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.pdb
 C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.Form2.resources
 C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.Form3.resources
+C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.Form4.resources

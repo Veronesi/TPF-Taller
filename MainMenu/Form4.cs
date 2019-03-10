@@ -12,16 +12,52 @@ namespace MainMenu
 {
     public partial class Form4 : Form
     {
+        String iNombre;
         List<Product> iListaPorductos;
-        public Form4(List<Product> pListaPorductos)
+        String iDni;
+        public Form4(List<Product> pListaPorductos,String pDni, String pNombre)
         {
+            this.iNombre = pNombre;
+            this.iDni = pDni;
             this.iListaPorductos = pListaPorductos;
             InitializeComponent();
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            List<string> _items = new List<string>();
+            foreach (Product producto in iListaPorductos)
+            {
+                _items.Add(producto.number+$" [ {producto.name} ] <{producto.type}>");
+            }
+            listBoxTarjetas.DataSource = _items;
+        }
 
+        private void btnBlanquear_Click(object sender, EventArgs e)
+        {
+            int tarjeta = listBoxTarjetas.SelectedIndex;
+            DialogResult result = MessageBox.Show($"Seguro que dese Blanquear la tarjeta {this.iListaPorductos[tarjeta].number}?", "Blanqueo de tarjeta", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                getJson json = new getJson();
+                ProductReset getJson = json.ProductReset(this.iListaPorductos[tarjeta].number);
+                if(getJson.response.error == "0")
+                {
+                    MessageBox.Show($"Se ha blanqueado con exito!\n Numero tarjeta: {getJson.number}", "Éxito");
+                }
+                else
+                {
+                    MessageBox.Show($"Servicio no Disponible\n {getJson.response.errorDescription}", "Error");
+                }
+
+            }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Form3 frm3 = new Form3(iNombre, this.iDni);
+            frm3.Show();
+            this.Hide();
         }
     }
 }

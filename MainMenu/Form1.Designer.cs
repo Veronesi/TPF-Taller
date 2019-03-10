@@ -215,6 +215,7 @@
             this.Controls.Add(this.btnNum2);
             this.Controls.Add(this.btnNum1);
             this.Name = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "terminal autoservicio";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

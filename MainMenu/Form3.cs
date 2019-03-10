@@ -29,19 +29,12 @@ namespace MainMenu
         private void btnBlanqueo_Click(object sender, EventArgs e)
         {
             getJson json = new getJson();
-            ProductReset getJson = json.ProductReset(this.iDni);
+            Products getJson = json.Products(this.iDni);
             if (getJson != null)
             {
-                if(getJson.response.error == "0")
-                {
-                    Form4 frm4 = new Form4(getJson.response);
-                    frm4.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Servicio no Disponible\n "+getJson.response.errorDescription, "Error");
-                }
+                Form4 frm4 = new Form4(getJson.response.product, this.iDni, this.iNombre);
+                frm4.Show();
+                this.Hide();
             }
             else
             {
