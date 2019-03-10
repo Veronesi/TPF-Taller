@@ -88,7 +88,7 @@ namespace MainMenu
 
                 /* Verificamos si el Dni y pin coinciden */
                 getJson json = new getJson();
-                Clients getJson = json.Clients(this.iDni, this.textBoxPdw.Text);
+                JsonClient getJson = json.Clients(this.iDni, this.textBoxPdw.Text);
                 if (getJson == null)
                     throw new AuthenticationException();
 

@@ -66,9 +66,9 @@
     <Compile Include="Excepciones\AuthenticationException.cs" />
     <Compile Include="Excepciones\JsonNullException.cs" />
     <Compile Include="Excepciones\MovementsNullException.cs" />
-    <Compile Include="TiposVariables\Balance\Balance.cs" />
+    <Compile Include="TiposVariables\Balance\JsonBalance.cs" />
     <Compile Include="TiposVariables\Cliente\Client.cs" />
-    <Compile Include="TiposVariables\Cliente\Clients.cs" />
+    <Compile Include="TiposVariables\Cliente\JsonClient.cs" />
     <Compile Include="TiposVariables\Producto\ErrorProductReset.cs" />
     <Compile Include="Ventanas\VentanaDni.cs">
       <SubType>Form</SubType>
@@ -103,16 +103,16 @@
     <Compile Include="getJson.cs" />
     <Compile Include="Excepciones\LengthPinException.cs" />
     <Compile Include="TiposVariables\Movimiento\Movement.cs" />
-    <Compile Include="TiposVariables\Movimiento\Movimiento.cs" />
+    <Compile Include="TiposVariables\Movimiento\JsonMovement.cs" />
     <Compile Include="TiposVariables\Producto\Product.cs" />
-    <Compile Include="TiposVariables\Producto\ProductReset.cs" />
-    <Compile Include="TiposVariables\Producto\Products.cs" />
+    <Compile Include="TiposVariables\Producto\JsonErrorRest.cs" />
+    <Compile Include="TiposVariables\Producto\JsonProduct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TiposVariables\Cliente\Response.cs" />
-    <Compile Include="TiposVariables\Balance\Tbalance.cs" />
-    <Compile Include="TiposVariables\Movimiento\Tmovements.cs" />
-    <Compile Include="TiposVariables\Producto\Tproduct.cs" />
+    <Compile Include="TiposVariables\Cliente\ResponseClient.cs" />
+    <Compile Include="TiposVariables\Balance\Balance.cs" />
+    <Compile Include="TiposVariables\Movimiento\ResponseMovement.cs" />
+    <Compile Include="TiposVariables\Producto\ResponseProduct.cs" />
     <EmbeddedResource Include="Ventanas\VentanaDni.resx">
       <DependentUpon>VentanaDni.cs</DependentUpon>
     </EmbeddedResource>

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace MainMenu
 {
-    class Tmovements
+    class JsonBalance
     {
-        public List<Movement> movements { get; set; }
+        public String id { get; set; }
+        public Balance response { get; set; }
     }
 }

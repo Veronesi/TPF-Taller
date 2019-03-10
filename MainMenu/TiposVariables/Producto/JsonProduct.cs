@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MainMenu
 {
-    class Movimiento
+    class JsonProduct
     {
         public String id { get; set; }
-        public Tmovements response { get; set; }
+        public ResponseProduct response { get; set; }
     }
 }

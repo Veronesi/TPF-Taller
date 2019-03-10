@@ -41,7 +41,7 @@ namespace MainMenu
             if(result == DialogResult.Yes)
             {
                 getJson json = new getJson();
-                ProductReset getJson = json.ProductReset(this.iListaPorductos[tarjeta].number);
+                JsonErrorRest getJson = json.ProductReset(this.iListaPorductos[tarjeta].number);
 
                 if(getJson.response.error == "0")
                     MessageBox.Show($"Se ha blanqueado con exito!\n Numero tarjeta: {getJson.number}", "Éxito");

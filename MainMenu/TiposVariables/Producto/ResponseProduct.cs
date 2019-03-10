@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace MainMenu
 {
-    class Tbalance
+    class ResponseProduct
     {
-        public String balance { get; set; }
+        public List<Product> product { get; set; }
+        
     }
 }

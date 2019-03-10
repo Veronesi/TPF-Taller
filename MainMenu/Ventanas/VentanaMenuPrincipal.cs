@@ -38,7 +38,7 @@ namespace MainMenu
             {
                 /* Obtenemos la lista de productos */
                 getJson json = new getJson();
-                Products getJson = json.Products(this.iDni);
+                JsonProduct getJson = json.Products(this.iDni);
                 if (getJson == null)
                     throw new JsonNullException();
 
@@ -72,7 +72,7 @@ namespace MainMenu
             {
                 /* Obtenemos el saldo de la cuenta corriente */
                 getJson json = new getJson();
-                Balance getJson = json.Balance(this.iDni);
+                JsonBalance getJson = json.Balance(this.iDni);
                 if (getJson == null)
                     throw new JsonNullException();
                 /* Mostramos el saldo */

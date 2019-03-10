@@ -17,7 +17,7 @@ namespace MainMenu
         /// <param name="pDni">Dni del cliente</param>
         /// <param name="pPin">Pin del cliente</param>
         /// <returns></returns>
-        public Clients Clients(String pDni, String pPin)
+        public JsonClient Clients(String pDni, String pPin)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace MainMenu
 
                 /* Convertimos el String en Json(Clients) */
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-                List<Clients> objList = (List<Clients>)serializer.Deserialize(json, typeof(List<Clients>));
+                List<JsonClient> objList = (List<JsonClient>)serializer.Deserialize(json, typeof(List<JsonClient>));
                 return objList[0];
 
             }
@@ -40,7 +40,7 @@ namespace MainMenu
         /// </summary>
         /// <param name="pDni">Dni del cliente</param>
         /// <returns></returns>
-        public Products Products(String pDni)
+        public JsonProduct Products(String pDni)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace MainMenu
 
                 /* Convertimos el String en Json(Products) */
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-                List<Products> objList = (List<Products>)serializer.Deserialize(json, typeof(List<Products>));
+                List<JsonProduct> objList = (List<JsonProduct>)serializer.Deserialize(json, typeof(List<JsonProduct>));
                 return objList[0];
 
             }
@@ -63,7 +63,7 @@ namespace MainMenu
         /// </summary>
         /// <param name="pNumber">Numero de tarjeta a ser blanqueada</param>
         /// <returns>Devuelve el estado de la respuesta del blanqueo</returns>
-        public ProductReset ProductReset(String pNumber)
+        public JsonErrorRest ProductReset(String pNumber)
         {
 
             try
@@ -76,7 +76,7 @@ namespace MainMenu
 
                 /* Convertimos el String en Json(Products) */
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-                List<ProductReset> objList = (List<ProductReset>)serializer.Deserialize(json, typeof(List<ProductReset>));
+                List<JsonErrorRest> objList = (List<JsonErrorRest>)serializer.Deserialize(json, typeof(List<JsonErrorRest>));
                 return objList[0];
             }
             catch (JsonNullException)
@@ -89,7 +89,7 @@ namespace MainMenu
         /// </summary>
         /// <param name="pDni">Dni del dueño de la tarjeta</param>
         /// <returns>Devuelve el salgo del cliente</returns>
-        public Balance Balance(String pDni)
+        public JsonBalance Balance(String pDni)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace MainMenu
 
                 /* Convertimos el String en Json(Products) */
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-                List<Balance> objList = (List<Balance>)serializer.Deserialize(json, typeof(List<Balance>));
+                List<JsonBalance> objList = (List<JsonBalance>)serializer.Deserialize(json, typeof(List<JsonBalance>));
                 return objList[0];
             }
             catch (JsonNullException)
@@ -111,7 +111,7 @@ namespace MainMenu
         /// </summary>
         /// <param name="pDni">Dni del dueño de la cuenta</param>
         /// <returns>Devuelve los ultimos movimientos</returns>
-        public Movimiento UltimosMovimientos(String pDni)
+        public JsonMovement UltimosMovimientos(String pDni)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace MainMenu
                 
                 /* Convertimos el String en Json(Products) */
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-                List<Movimiento> objList = (List<Movimiento>)serializer.Deserialize(json, typeof(List<Movimiento>));
+                List<JsonMovement> objList = (List<JsonMovement>)serializer.Deserialize(json, typeof(List<JsonMovement>));
                 return objList[0];
             }
             catch (JsonNullException)

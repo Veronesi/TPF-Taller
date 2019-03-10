@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace MainMenu
 {
-    class Tproduct
+    class ResponseClient
     {
-        public List<Product> product { get; set; }
-        
+        public Client client { get; set; }
     }
 }

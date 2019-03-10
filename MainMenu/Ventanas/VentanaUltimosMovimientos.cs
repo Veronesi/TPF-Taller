@@ -27,7 +27,7 @@ namespace MainMenu
             try
             {
                 getJson json = new getJson();
-                Movimiento getJson = json.UltimosMovimientos(this.iDni);
+                JsonMovement getJson = json.UltimosMovimientos(this.iDni);
                 if (getJson == null)
                     throw new JsonNullException();
 

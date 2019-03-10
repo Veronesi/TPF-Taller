@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainMenu
 {
-    class ProductReset
+    class JsonErrorRest
     {
         public String number { get; set; }
         public ErrorProductReset response { get; set; }

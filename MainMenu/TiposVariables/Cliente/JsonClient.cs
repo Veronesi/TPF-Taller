@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace MainMenu
 {
-    class Balance
+    class JsonClient
     {
-        public String balance { get; set; }
+        public String id { get; set; }
+        public String pass { get; set; }
+        public ResponseClient response { get; set; }
     }
 }
