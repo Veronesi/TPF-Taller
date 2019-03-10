@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace MainMenu
 {
-    public partial class Form4 : Form
+    public partial class VentanaProductosDelCliente : Form
     {
         String iNombre;
         List<Product> iListaPorductos;
         String iDni;
-        public Form4(List<Product> pListaPorductos,String pDni, String pNombre)
+        public VentanaProductosDelCliente(List<Product> pListaPorductos,String pDni, String pNombre)
         {
             this.iNombre = pNombre;
             this.iDni = pDni;
@@ -23,12 +23,13 @@ namespace MainMenu
             InitializeComponent();
         }
 
-        private void Form4_Load(object sender, EventArgs e)
+        private void VentanaProductosDelCliente_Load(object sender, EventArgs e)
         {
+            /* Agregamos las tarjeas a la tabla */
             List<string> _items = new List<string>();
             foreach (Product producto in iListaPorductos)
             {
-                _items.Add(producto.number+$" [ {producto.name} ] <{producto.type}>");
+                _items.Add($"{producto.number} [ {producto.name} ] <{producto.type}>");
             }
             listBoxTarjetas.DataSource = _items;
         }
@@ -41,22 +42,17 @@ namespace MainMenu
             {
                 getJson json = new getJson();
                 ProductReset getJson = json.ProductReset(this.iListaPorductos[tarjeta].number);
-                if(getJson.response.error == "0")
-                {
-                    MessageBox.Show($"Se ha blanqueado con exito!\n Numero tarjeta: {getJson.number}", "Éxito");
-                }
-                else
-                {
-                    MessageBox.Show($"Servicio no Disponible\n {getJson.response.errorDescription}", "Error");
-                }
 
+                if(getJson.response.error == "0")
+                    MessageBox.Show($"Se ha blanqueado con exito!\n Numero tarjeta: {getJson.number}", "Éxito");
+                else
+                    MessageBox.Show($"Servicio no Disponible\n {getJson.response.errorDescription}", "Error");
             }
         }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Form3 frm3 = new Form3(iNombre, this.iDni);
-            frm3.Show();
+            VentanaMenuPrincipal ventanaMenuPrincipal = new VentanaMenuPrincipal(iNombre, this.iDni);
+            ventanaMenuPrincipal.Show();
             this.Hide();
         }
     }

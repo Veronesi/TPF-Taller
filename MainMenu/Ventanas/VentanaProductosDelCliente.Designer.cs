@@ -1,6 +1,6 @@
 ﻿namespace MainMenu
 {
-    partial class Form4
+    partial class VentanaProductosDelCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -65,7 +65,7 @@
             this.btnBlanquear.UseVisualStyleBackColor = true;
             this.btnBlanquear.Click += new System.EventHandler(this.btnBlanquear_Click);
             // 
-            // Form4
+            // VentanaProductosDelCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,9 +73,9 @@
             this.Controls.Add(this.btnBlanquear);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.listBoxTarjetas);
-            this.Name = "Form4";
-            this.Text = "Form4";
-            this.Load += new System.EventHandler(this.Form4_Load);
+            this.Name = "VentanaProductosDelCliente";
+            this.Text = "Tus Productos";
+            this.Load += new System.EventHandler(this.VentanaProductosDelCliente_Load);
             this.ResumeLayout(false);
 
         }

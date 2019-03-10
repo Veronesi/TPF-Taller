@@ -10,10 +10,14 @@ using System.Windows.Forms;
 
 namespace MainMenu
 {
-    public partial class Form2 : Form
+    public partial class VentanaPin : Form
     {
         private String iDni;
-        public Form2(String pDni)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pDni">Dni ingresado en la anterior ventana</param>
+        public VentanaPin(String pDni)
         {
             this.iDni = pDni;
             InitializeComponent();
@@ -75,41 +79,55 @@ namespace MainMenu
             /* Borramos el campo DNI */
             this.textBoxPdw.Text = "";
         }
-
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (this.textBoxPdw.TextLength == this.textBoxPdw.MaxLength)
+            try
             {
+                if (this.textBoxPdw.TextLength != this.textBoxPdw.MaxLength)
+                    throw new LengthPinException();
+
+                /* Verificamos si el Dni y pin coinciden */
                 getJson json = new getJson();
                 Clients getJson = json.Clients(this.iDni, this.textBoxPdw.Text);
-                if (getJson != null)
-                {
-                    Form3 frm3 = new Form3(getJson.response.client.name, getJson.id);
-                    frm3.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("El DNI o el PIN es incorrecto", "Error");
-                    Form1 frm1 = new Form1();
-                    frm1.Show();
-                    this.Hide();
-                }
+                if (getJson == null)
+                    throw new AuthenticationException();
+
+                VentanaMenuPrincipal frm3 = new VentanaMenuPrincipal(getJson.response.client.name, getJson.id);
+                frm3.Show();
+                this.Hide();
             }
-            else
-                MessageBox.Show("El pin debe ser de "+this.textBoxPdw.MaxLength+" caracteres", "Error");
+            catch (AuthenticationException)
+            {
+                MessageBox.Show("Problemas en la autentificación", "Error");
+                VentanaDni frm1 = new VentanaDni();
+                frm1.Show();
+                this.Hide();
+            }
+            catch (LengthPinException)
+            {
+                MessageBox.Show($"El pin debe ser de {this.textBoxPdw.MaxLength} caracteres", "Error");
+            } 
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Form1 frm1 = new Form1();
+            VentanaDni frm1 = new VentanaDni();
             frm1.Show();
             this.Hide();
         }
+        /// <summary>
+        /// Agrega un caracter al campo textBoxPdw
+        /// </summary>
+        /// <param name="pNumero">Numero presionado</param>
         private void ingresarNumero(string pNumero)
         {
             if (this.textBoxPdw.TextLength < this.textBoxPdw.MaxLength)
                 this.textBoxPdw.Text += pNumero;
+        }
+
+        private void VentanaPin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

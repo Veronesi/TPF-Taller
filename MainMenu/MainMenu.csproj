@@ -62,52 +62,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
-    <Compile Include="Clients.cs" />
-    <Compile Include="ErrorProductReset.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Excepciones\DniNullException.cs" />
+    <Compile Include="Excepciones\AuthenticationException.cs" />
+    <Compile Include="Excepciones\JsonNullException.cs" />
+    <Compile Include="Excepciones\MovementsNullException.cs" />
+    <Compile Include="TiposVariables\Balance\Balance.cs" />
+    <Compile Include="TiposVariables\Cliente\Client.cs" />
+    <Compile Include="TiposVariables\Cliente\Clients.cs" />
+    <Compile Include="TiposVariables\Producto\ErrorProductReset.cs" />
+    <Compile Include="Ventanas\VentanaDni.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Ventanas\VentanaDni.Designer.cs">
+      <DependentUpon>VentanaDni.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Ventanas\VentanaPin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Ventanas\VentanaPin.Designer.cs">
+      <DependentUpon>VentanaPin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="Ventanas\VentanaMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="Ventanas\VentanaMenuPrincipal.Designer.cs">
+      <DependentUpon>VentanaMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="Ventanas\VentanaProductosDelCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="Ventanas\VentanaProductosDelCliente.Designer.cs">
+      <DependentUpon>VentanaProductosDelCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\VentanaUltimosMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\VentanaUltimosMovimientos.Designer.cs">
+      <DependentUpon>VentanaUltimosMovimientos.cs</DependentUpon>
     </Compile>
     <Compile Include="getJson.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductReset.cs" />
-    <Compile Include="Products.cs" />
+    <Compile Include="Excepciones\LengthPinException.cs" />
+    <Compile Include="TiposVariables\Movimiento\Movement.cs" />
+    <Compile Include="TiposVariables\Movimiento\Movimiento.cs" />
+    <Compile Include="TiposVariables\Producto\Product.cs" />
+    <Compile Include="TiposVariables\Producto\ProductReset.cs" />
+    <Compile Include="TiposVariables\Producto\Products.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Response.cs" />
-    <Compile Include="Tproduct.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TiposVariables\Cliente\Response.cs" />
+    <Compile Include="TiposVariables\Balance\Tbalance.cs" />
+    <Compile Include="TiposVariables\Movimiento\Tmovements.cs" />
+    <Compile Include="TiposVariables\Producto\Tproduct.cs" />
+    <EmbeddedResource Include="Ventanas\VentanaDni.resx">
+      <DependentUpon>VentanaDni.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\VentanaPin.resx">
+      <DependentUpon>VentanaPin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\VentanaMenuPrincipal.resx">
+      <DependentUpon>VentanaMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\VentanaProductosDelCliente.resx">
+      <DependentUpon>VentanaProductosDelCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\VentanaUltimosMovimientos.resx">
+      <DependentUpon>VentanaUltimosMovimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,5 +162,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

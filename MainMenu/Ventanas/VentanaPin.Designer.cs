@@ -1,6 +1,6 @@
 ﻿namespace MainMenu
 {
-    partial class Form2
+    partial class VentanaPin
     {
         /// <summary>
         /// Required designer variable.
@@ -230,6 +230,7 @@
             this.Controls.Add(this.btnNum1);
             this.Name = "Form2";
             this.Text = "terminal autoservicio";
+            this.Load += new System.EventHandler(this.VentanaPin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,6 +1,6 @@
 ﻿namespace MainMenu
 {
-    partial class Form3
+    partial class VentanaMenuPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -55,6 +55,7 @@
             this.btnSaldo.TabIndex = 1;
             this.btnSaldo.Text = "SALDO DE CUENTA CORRIENTE";
             this.btnSaldo.UseVisualStyleBackColor = true;
+            this.btnSaldo.Click += new System.EventHandler(this.btnSaldo_Click);
             // 
             // btnMovimientos
             // 
@@ -65,6 +66,7 @@
             this.btnMovimientos.TabIndex = 2;
             this.btnMovimientos.Text = "ULTIMOS MOVIMIENTOS";
             this.btnMovimientos.UseVisualStyleBackColor = true;
+            this.btnMovimientos.Click += new System.EventHandler(this.btnMovimientos_Click);
             // 
             // btnSalir
             // 
@@ -86,7 +88,7 @@
             this.labelNombre.TabIndex = 4;
             this.labelNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form3
+            // VentanaMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,9 +98,9 @@
             this.Controls.Add(this.btnMovimientos);
             this.Controls.Add(this.btnSaldo);
             this.Controls.Add(this.btnBlanqueo);
-            this.Name = "Form3";
-            this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Form3_Load);
+            this.Name = "VentanaMenuPrincipal";
+            this.Text = "Menu Principal";
+            this.Load += new System.EventHandler(this.VentanaMenuPrincipal_Load);
             this.ResumeLayout(false);
 
         }

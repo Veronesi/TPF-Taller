@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace MainMenu
 {
-    public partial class Form1 : Form
+    public partial class VentanaDni : Form
     {
-        public Form1()
+        public VentanaDni()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void VentanaDni_Load(object sender, EventArgs e)
         {
 
         }
@@ -80,22 +80,21 @@ namespace MainMenu
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            
-            if(this.textBoxDni.Text == "")
+            try
+            {
+                if (this.textBoxDni.Text == "")
+                    throw new DniNullException();
+                VentanaPin ventanaPin = new VentanaPin(this.textBoxDni.Text);
+                ventanaPin.Show();
+                this.Hide();
+            }
+            catch(DniNullException)
             {
                 MessageBox.Show("Por favor ingrese un DNI.", "Error");
             }
-            else
-            {
-                Form2 frm2 = new Form2(this.textBoxDni.Text);
-                frm2.Show();
-                this.Hide();
-                if(frm2.IsDisposed)
-                    this.Show();
-            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void VentanaDni_Click(object sender, EventArgs e)
         {
 
         }

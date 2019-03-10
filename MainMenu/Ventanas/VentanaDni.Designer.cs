@@ -1,6 +1,6 @@
 ﻿namespace MainMenu
 {
-    partial class Form1
+    partial class VentanaDni
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -171,7 +171,7 @@
             this.label1.Size = new System.Drawing.Size(382, 33);
             this.label1.TabIndex = 11;
             this.label1.Text = "Ingrese su numero de documento";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Click += new System.EventHandler(this.VentanaDni_Click);
             // 
             // btnOk
             // 
@@ -217,7 +217,7 @@
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "terminal autoservicio";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.VentanaDni_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
