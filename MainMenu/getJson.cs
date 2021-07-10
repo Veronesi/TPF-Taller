@@ -34,6 +34,10 @@ namespace MainMenu
             {
                 return null;
             }
+            catch (Exception err)
+            {
+                Log.save(err);
+            }
         }
         /// <summary>
         /// Obtiene las tarjetas que dispone el cliente. 
@@ -56,6 +60,10 @@ namespace MainMenu
             catch (JsonNullException)
             {
                 return null;
+            }
+            catch (Exception err)
+            {
+                Log.save(err);
             }
         }
         /// <summary>
@@ -83,6 +91,10 @@ namespace MainMenu
             {
                 return null;
             }
+            catch (Exception err)
+            {
+                Log.save(err);
+            }
         }
         /// <summary>
         ///  Informa el estado de la cuenta corriente del cliente.
@@ -105,6 +117,10 @@ namespace MainMenu
             {
                 return null;
             }
+            catch (Exception err)
+            {
+                Log.save(err);
+            }
         }
         /// <summary>
         ///  Devuelve la información de los últimos movimientos de la cuenta corriente del cliente.
@@ -126,6 +142,10 @@ namespace MainMenu
             catch (JsonNullException)
             {
                 return null;
+            }
+            catch (Exception err)
+            {
+                Log.save(err);
             }
         }
         /// <summary>

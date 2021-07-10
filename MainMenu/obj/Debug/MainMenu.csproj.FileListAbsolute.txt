@@ -12,3 +12,17 @@ C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.VentanaPr
 C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.VentanaUltimosMovimientos.resources
 C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.VentanaDni.resources
 C:\Users\Fanaes\source\repos\ProyectoFinal\MainMenu\obj\Debug\MainMenu.VentanaPin.resources
+C:\git\TPF-Taller\MainMenu\bin\Debug\MainMenu.exe.config
+C:\git\TPF-Taller\MainMenu\bin\Debug\MainMenu.exe
+C:\git\TPF-Taller\MainMenu\bin\Debug\MainMenu.pdb
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.csproj.AssemblyReference.cache
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.VentanaDni.resources
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.VentanaPin.resources
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.VentanaMenuPrincipal.resources
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.VentanaProductosDelCliente.resources
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.VentanaUltimosMovimientos.resources
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.Properties.Resources.resources
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.csproj.GenerateResource.cache
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.csproj.CoreCompileInputs.cache
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.exe
+C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.pdb

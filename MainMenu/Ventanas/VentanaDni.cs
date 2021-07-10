@@ -24,52 +24,52 @@ namespace MainMenu
         /* Botones Numericos */
         private void btnNum1_Click(object sender, EventArgs e)
         {
-            this.textBoxDni.Text += "1";
+            this.setNumber("1");
         }
 
         private void btnNum2_Click(object sender, EventArgs e)
         {
-            this.textBoxDni.Text += "2";
+            this.setNumber("2");
         }
 
         private void btnNum3_Click(object sender, EventArgs e)
         {
-            this.textBoxDni.Text += "3";
+            this.setNumber("3");
         }
 
         private void btnNum4_Click(object sender, EventArgs e)
         {
-            this.textBoxDni.Text += "4";
+            this.setNumber("4");
         }
 
         private void btnNum5_Click(object sender, EventArgs e)
         {
-            this.textBoxDni.Text += "5";
+            this.setNumber("5");
         }
 
         private void btnNum6_Click(object sender, EventArgs e)
         {
-            this.textBoxDni.Text += "6";
+            this.setNumber("6");
         }
 
         private void btnNum7_Click(object sender, EventArgs e)
         {
-            this.textBoxDni.Text += "7";
+            this.setNumber("7");
         }
 
         private void btnNum8_Click(object sender, EventArgs e)
         {
-            this.textBoxDni.Text += "8";
+            this.setNumber("8");
         }
 
         private void btnNum9_Click(object sender, EventArgs e)
         {
-            this.textBoxDni.Text += "9";
+            this.setNumber("9");
         }
 
         private void btnNum0_Click(object sender, EventArgs e)
         {
-            this.textBoxDni.Text += "0";
+           this.setNumber("0");
         }
         /* Botones de Borrar y OK */
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -84,6 +84,10 @@ namespace MainMenu
             {
                 if (this.textBoxDni.Text == "")
                     throw new DniNullException();
+
+                OperationRegister operation = new OperationRegister();
+                operation.setDni(this.textBoxDni.Text);
+
                 VentanaPin ventanaPin = new VentanaPin(this.textBoxDni.Text);
                 ventanaPin.Show();
                 this.Hide();
@@ -92,8 +96,16 @@ namespace MainMenu
             {
                 MessageBox.Show("Por favor ingrese un DNI.", "Error");
             }
+            catch (Exception err)
+            {
+                Log.save(err);
+            }
         }
 
+        private void setNumber(String pNumber)
+        {
+            this.textBoxDni.Text += pNumber;
+        }
         private void VentanaDni_Click(object sender, EventArgs e)
         {
 

@@ -46,7 +46,11 @@ namespace MainMenu
             catch (MovementsNullException)
             {
                 MessageBox.Show("No posee movimientos", "Error");
-            }        
+            }
+            catch (Exception err)
+            {
+                Log.save(err);
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

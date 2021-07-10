@@ -28,7 +28,7 @@ namespace MainMenu
 
         private void VentanaMenuPrincipal_Load(object sender, EventArgs e)
         {
-            /* Mostramos el nombre del cliente */
+            // Mostramos el nombre del cliente 
             this.labelNombre.Text = $"Bienvenido {this.iNombre}";
         }
 
@@ -36,7 +36,7 @@ namespace MainMenu
         {
             try
             {
-                /* Obtenemos la lista de productos */
+                // Obtenemos la lista de productos 
                 getJson json = new getJson();
                 JsonProduct getJson = json.Products(this.iDni);
                 if (getJson == null)
@@ -49,6 +49,10 @@ namespace MainMenu
             catch (JsonNullException)
             {
                 MessageBox.Show("Servicio no Disponible", "Error");
+            }
+            catch (Exception err)
+            {
+                Log.save(err);
             }
         }
 
@@ -81,6 +85,10 @@ namespace MainMenu
             catch(JsonNullException)
             {
                 MessageBox.Show("Servicio no Disponible", "Error");
+            }
+            catch (Exception err)
+            {
+                Log.save(err);
             }
         }
     }

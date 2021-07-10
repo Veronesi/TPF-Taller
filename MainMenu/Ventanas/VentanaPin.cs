@@ -26,52 +26,52 @@ namespace MainMenu
         /* Botones Numericos */
         private void btnNum1_Click(object sender, EventArgs e)
         {
-            this.ingresarNumero("1");
+            this.setNumber("1");
         }
 
         private void btnNum2_Click(object sender, EventArgs e)
         {
-            this.ingresarNumero("2");
+            this.setNumber("2");
         }
 
         private void btnNum3_Click(object sender, EventArgs e)
         {
-            this.ingresarNumero("3");
+            this.setNumber("3");
         }
 
         private void btnNum4_Click(object sender, EventArgs e)
         {
-            this.ingresarNumero("4");
+            this.setNumber("4");
         }
 
         private void btnNum5_Click(object sender, EventArgs e)
         {
-            this.ingresarNumero("5");
+            this.setNumber("5");
         }
 
         private void btnNum6_Click(object sender, EventArgs e)
         {
-            this.ingresarNumero("6");
+            this.setNumber("6");
         }
 
         private void btnNum7_Click(object sender, EventArgs e)
         {
-            this.ingresarNumero("7");
+            this.setNumber("7");
         }
 
         private void btnNum8_Click(object sender, EventArgs e)
         {
-            this.ingresarNumero("8");
+            this.setNumber("8");
         }
 
         private void btnNum9_Click(object sender, EventArgs e)
         {
-            this.ingresarNumero("9");
+            this.setNumber("9");
         }
 
         private void btnNum0_Click(object sender, EventArgs e)
         {
-            this.ingresarNumero("0");
+            this.setNumber("0");
         }
         /* Botones de Borrar y OK */
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -92,34 +92,38 @@ namespace MainMenu
                 if (getJson == null)
                     throw new AuthenticationException();
 
-                VentanaMenuPrincipal frm3 = new VentanaMenuPrincipal(getJson.response.client.name, getJson.id);
-                frm3.Show();
+                VentanaMenuPrincipal ventanaMenuPrincipal = new VentanaMenuPrincipal(getJson.response.client.name, getJson.id);
+                ventanaMenuPrincipal.Show();
                 this.Hide();
             }
             catch (AuthenticationException)
             {
                 MessageBox.Show("Problemas en la autentificación", "Error");
-                VentanaDni frm1 = new VentanaDni();
-                frm1.Show();
+                VentanaDni ventanaDni = new VentanaDni();
+                ventanaDni.Show();
                 this.Hide();
             }
             catch (LengthPinException)
             {
                 MessageBox.Show($"El pin debe ser de {this.textBoxPdw.MaxLength} caracteres", "Error");
-            } 
+            }
+            catch (Exception err)
+            {
+                Log.save(err);
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            VentanaDni frm1 = new VentanaDni();
-            frm1.Show();
+            VentanaDni ventanaDni = new VentanaDni();
+            ventanaDni.Show();
             this.Hide();
         }
         /// <summary>
         /// Agrega un caracter al campo textBoxPdw
         /// </summary>
         /// <param name="pNumero">Numero presionado</param>
-        private void ingresarNumero(string pNumero)
+        private void setNumber(string pNumero)
         {
             if (this.textBoxPdw.TextLength < this.textBoxPdw.MaxLength)
                 this.textBoxPdw.Text += pNumero;

@@ -25,7 +25,7 @@ namespace MainMenu
 
         private void VentanaProductosDelCliente_Load(object sender, EventArgs e)
         {
-            /* Agregamos las tarjeas a la tabla */
+            // Agregamos las tarjeas a la tabla
             List<string> _items = new List<string>();
             foreach (Product producto in iListaPorductos)
             {
@@ -44,9 +44,9 @@ namespace MainMenu
                 JsonErrorRest getJson = json.ProductReset(this.iListaPorductos[tarjeta].number);
 
                 if(getJson.response.error == "0")
-                    MessageBox.Show($"Se ha blanqueado con exito!\n Numero tarjeta: {getJson.number}", "Éxito");
+                    MessageBox.Show($"Se ha blanqueado con exito!\nNumero tarjeta: {getJson.number}", "Éxito");
                 else
-                    MessageBox.Show($"Servicio no Disponible\n {getJson.response.errorDescription}", "Error");
+                    MessageBox.Show($"Servicio no Disponible\n{getJson.response.errorDescription}", "Error");
             }
         }
         private void btnVolver_Click(object sender, EventArgs e)

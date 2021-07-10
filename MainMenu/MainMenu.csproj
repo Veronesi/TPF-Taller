@@ -66,6 +66,8 @@
     <Compile Include="Excepciones\AuthenticationException.cs" />
     <Compile Include="Excepciones\JsonNullException.cs" />
     <Compile Include="Excepciones\MovementsNullException.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="OperationRegister.cs" />
     <Compile Include="TiposVariables\Balance\JsonBalance.cs" />
     <Compile Include="TiposVariables\Cliente\Client.cs" />
     <Compile Include="TiposVariables\Cliente\JsonClient.cs" />
