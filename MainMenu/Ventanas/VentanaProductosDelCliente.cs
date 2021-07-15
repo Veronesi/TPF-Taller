@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MainMenu.Ventanas;
 
 namespace MainMenu
 {
@@ -21,6 +22,7 @@ namespace MainMenu
             this.iDni = pDni;
             this.iListaPorductos = pListaPorductos;
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void VentanaProductosDelCliente_Load(object sender, EventArgs e)
@@ -36,13 +38,15 @@ namespace MainMenu
 
         private void btnBlanquear_Click(object sender, EventArgs e)
         {
+            VentanaCargando ventanaCargando = new VentanaCargando();
             int tarjeta = listBoxTarjetas.SelectedIndex;
             DialogResult result = MessageBox.Show($"Seguro que dese Blanquear la tarjeta {this.iListaPorductos[tarjeta].number}?", "Blanqueo de tarjeta", MessageBoxButtons.YesNo);
             if(result == DialogResult.Yes)
             {
+                ventanaCargando.Show();
                 getJson json = new getJson();
                 JsonErrorRest getJson = json.ProductReset(this.iListaPorductos[tarjeta].number);
-
+                ventanaCargando.Hide();
                 if(getJson.response.error == "0")
                     MessageBox.Show($"Se ha blanqueado con exito!\nNumero tarjeta: {getJson.number}", "Éxito");
                 else

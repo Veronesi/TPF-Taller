@@ -15,6 +15,7 @@ namespace MainMenu
         public VentanaDni()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void VentanaDni_Load(object sender, EventArgs e)
@@ -85,8 +86,7 @@ namespace MainMenu
                 if (this.textBoxDni.Text == "")
                     throw new DniNullException();
 
-                OperationRegister operation = new OperationRegister();
-                operation.setDni(this.textBoxDni.Text);
+                OperationRegister.dni(this.textBoxDni.Text);
 
                 VentanaPin ventanaPin = new VentanaPin(this.textBoxDni.Text);
                 ventanaPin.Show();

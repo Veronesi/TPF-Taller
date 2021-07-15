@@ -26,3 +26,17 @@ C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.csproj.GenerateResource.cache
 C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.csproj.CoreCompileInputs.cache
 C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.exe
 C:\git\TPF-Taller\MainMenu\obj\Debug\MainMenu.pdb
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.VentanaDni.resources
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.VentanaPin.resources
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.VentanaMenuPrincipal.resources
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.VentanaProductosDelCliente.resources
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.VentanaUltimosMovimientos.resources
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.Properties.Resources.resources
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.csproj.GenerateResource.cache
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.csproj.CoreCompileInputs.cache
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.exe
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.pdb
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\bin\Debug\MainMenu.exe.config
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\bin\Debug\MainMenu.exe
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\bin\Debug\MainMenu.pdb
+D:\Escritorio\Repositorios\TPF-Taller\MainMenu\obj\Debug\MainMenu.Ventanas.VentanaCargando.resources

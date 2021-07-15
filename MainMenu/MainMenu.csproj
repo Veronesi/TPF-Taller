@@ -72,6 +72,12 @@
     <Compile Include="TiposVariables\Cliente\Client.cs" />
     <Compile Include="TiposVariables\Cliente\JsonClient.cs" />
     <Compile Include="TiposVariables\Producto\ErrorProductReset.cs" />
+    <Compile Include="Ventanas\VentanaCargando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\VentanaCargando.Designer.cs">
+      <DependentUpon>VentanaCargando.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\VentanaDni.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <Compile Include="TiposVariables\Balance\Balance.cs" />
     <Compile Include="TiposVariables\Movimiento\ResponseMovement.cs" />
     <Compile Include="TiposVariables\Producto\ResponseProduct.cs" />
+    <EmbeddedResource Include="Ventanas\VentanaCargando.resx">
+      <DependentUpon>VentanaCargando.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\VentanaDni.resx">
       <DependentUpon>VentanaDni.cs</DependentUpon>
     </EmbeddedResource>

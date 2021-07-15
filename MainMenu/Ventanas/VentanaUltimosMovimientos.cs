@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MainMenu.Ventanas;
 
 namespace MainMenu
 {
@@ -19,15 +20,19 @@ namespace MainMenu
             this.iNombre = pNombre;
             this.iDni = pDni;
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void VentanaUltimosMovimientos_Load(object sender, EventArgs e)
         {
+            VentanaCargando ventanaCargando = new VentanaCargando();
             /* Obtenemos los ultimos movimientos */
             try
             {
+                ventanaCargando.Show();
                 getJson json = new getJson();
                 JsonMovement getJson = json.UltimosMovimientos(this.iDni);
+                ventanaCargando.Hide();
                 if (getJson == null)
                     throw new JsonNullException();
 
@@ -49,6 +54,7 @@ namespace MainMenu
             }
             catch (Exception err)
             {
+                ventanaCargando.Hide();
                 Log.save(err);
             }
         }

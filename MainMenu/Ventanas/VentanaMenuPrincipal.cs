@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MainMenu.Ventanas;
 
 namespace MainMenu
 {
@@ -24,6 +25,7 @@ namespace MainMenu
             this.iNombre = pNombre;
             this.iDni = pDni;
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void VentanaMenuPrincipal_Load(object sender, EventArgs e)
@@ -34,11 +36,14 @@ namespace MainMenu
 
         private void btnBlanqueo_Click(object sender, EventArgs e)
         {
+            VentanaCargando ventanaCargando = new VentanaCargando();
             try
             {
+                ventanaCargando.Show();
                 // Obtenemos la lista de productos 
                 getJson json = new getJson();
                 JsonProduct getJson = json.Products(this.iDni);
+                ventanaCargando.Hide();
                 if (getJson == null)
                     throw new JsonNullException();
 
@@ -52,6 +57,7 @@ namespace MainMenu
             }
             catch (Exception err)
             {
+                ventanaCargando.Hide();
                 Log.save(err);
             }
         }
@@ -72,11 +78,14 @@ namespace MainMenu
 
         private void btnSaldo_Click(object sender, EventArgs e)
         {
+            VentanaCargando ventanaCargando = new VentanaCargando();
             try
             {
+                ventanaCargando.Show();
                 /* Obtenemos el saldo de la cuenta corriente */
                 getJson json = new getJson();
                 JsonBalance getJson = json.Balance(this.iDni);
+                ventanaCargando.Hide();
                 if (getJson == null)
                     throw new JsonNullException();
                 /* Mostramos el saldo */
@@ -88,6 +97,7 @@ namespace MainMenu
             }
             catch (Exception err)
             {
+                ventanaCargando.Hide();
                 Log.save(err);
             }
         }

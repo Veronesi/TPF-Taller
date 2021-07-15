@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MainMenu.Ventanas;
 
 namespace MainMenu
 {
@@ -21,6 +22,7 @@ namespace MainMenu
         {
             this.iDni = pDni;
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         /* Botones Numericos */
@@ -81,23 +83,28 @@ namespace MainMenu
         }
         private void btnOk_Click(object sender, EventArgs e)
         {
+            VentanaCargando ventanaCargando = new VentanaCargando();
             try
             {
                 if (this.textBoxPdw.TextLength != this.textBoxPdw.MaxLength)
                     throw new LengthPinException();
-
+                
+                ventanaCargando.Show();
                 /* Verificamos si el Dni y pin coinciden */
                 getJson json = new getJson();
                 JsonClient getJson = json.Clients(this.iDni, this.textBoxPdw.Text);
+                ventanaCargando.Hide();
                 if (getJson == null)
                     throw new AuthenticationException();
 
+                OperationRegister.pin(this.iDni);
                 VentanaMenuPrincipal ventanaMenuPrincipal = new VentanaMenuPrincipal(getJson.response.client.name, getJson.id);
                 ventanaMenuPrincipal.Show();
                 this.Hide();
             }
             catch (AuthenticationException)
             {
+                OperationRegister.pin(this.iDni, false);
                 MessageBox.Show("Problemas en la autentificación", "Error");
                 VentanaDni ventanaDni = new VentanaDni();
                 ventanaDni.Show();
@@ -109,6 +116,7 @@ namespace MainMenu
             }
             catch (Exception err)
             {
+                ventanaCargando.Hide();
                 Log.save(err);
             }
         }

@@ -37,6 +37,7 @@ namespace MainMenu
             catch (Exception err)
             {
                 Log.save(err);
+                return null;
             }
         }
         /// <summary>
@@ -64,6 +65,7 @@ namespace MainMenu
             catch (Exception err)
             {
                 Log.save(err);
+                return null;
             }
         }
         /// <summary>
@@ -94,6 +96,7 @@ namespace MainMenu
             catch (Exception err)
             {
                 Log.save(err);
+                return null;
             }
         }
         /// <summary>
@@ -120,6 +123,7 @@ namespace MainMenu
             catch (Exception err)
             {
                 Log.save(err);
+                return null;
             }
         }
         /// <summary>
@@ -146,6 +150,7 @@ namespace MainMenu
             catch (Exception err)
             {
                 Log.save(err);
+                return null;
             }
         }
         /// <summary>

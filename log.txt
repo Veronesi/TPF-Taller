@@ -1,0 +1,1 @@
+[15/7/2021 10:09:36] Exception of type 'MainMenu.LengthPinException' was thrown.    at MainMenu.VentanaPin.btnOk_Click(Object sender, EventArgs e) in C:\git\TPF-Taller\MainMenu\Ventanas\VentanaPin.cs:line 87
